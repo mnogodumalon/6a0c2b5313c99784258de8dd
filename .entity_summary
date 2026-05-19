@@ -1,0 +1,5 @@
+- Speisen (speisen): name[string/text], preis[number], kategorie[lookup/radio]
+- Tische (tische): tischnummer[string/text], bemerkung[string/text]
+- Bestellungen (bestellungen): tisch[applookup/select], positionen[applookup/select], bestellzeit[date/datetimeminute], trinkgeld[number], gesamt[number], bezahlt[bool]
+  → tisch links to app_id 6a0c2b41f8c0e3c711f12e3f
+  → positionen links to app_id 6a0c2b3d9f199babf80832d4

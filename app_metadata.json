@@ -1,0 +1,208 @@
+{
+  "appgroup_id": "6a0c2b5313c99784258de8dd",
+  "appgroup_name": "Restaurant Bestellsystem",
+  "apps": {
+    "speisen": {
+      "app_id": "6a0c2b3d9f199babf80832d4",
+      "name": "Speisen",
+      "main": false,
+      "controls": {
+        "name": {
+          "identifier": "name",
+          "label": "Name",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "preis": {
+          "identifier": "preis",
+          "label": "Preis (€)",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "precision": null
+        },
+        "kategorie": {
+          "identifier": "kategorie",
+          "label": "Kategorie",
+          "type": "lookup",
+          "subtype": "radio",
+          "fulltype": "lookup/radio",
+          "description": "One selected option of multiple available options (or `null`/`None`).\n\nThe available options are defined in the `lookup_data` attribute of this control.\n\nThe field value will be the key in this `lookup_data` attribute (or `null`/`None`).\n\nDisplayed as radio button fields in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_data": {
+            "speise": "Speise",
+            "getraenk": "Getränk"
+          }
+        }
+      }
+    },
+    "tische": {
+      "app_id": "6a0c2b41f8c0e3c711f12e3f",
+      "name": "Tische",
+      "main": false,
+      "controls": {
+        "tischnummer": {
+          "identifier": "tischnummer",
+          "label": "Tischnummer / Bezeichnung",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "bemerkung": {
+          "identifier": "bemerkung",
+          "label": "Bemerkung",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        }
+      }
+    },
+    "bestellungen": {
+      "app_id": "6a0c2b42d7ff8d6335b2f8db",
+      "name": "Bestellungen",
+      "main": false,
+      "controls": {
+        "tisch": {
+          "identifier": "tisch",
+          "label": "Tisch",
+          "type": "applookup",
+          "subtype": "select",
+          "fulltype": "applookup/select",
+          "description": "A reference to a LivingApp record from the target lookup app 'Tische' with the id `6a0c2b41f8c0e3c711f12e3f` (or `null`/`None`).\n\nThe field value will be a valid record URL in the form `https://my.living-apps.de/rest/apps/6a0c2b41f8c0e3c711f12e3f/<record-id>` (or `null`/`None`).\n\nDisplayed as single-select field in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_app": "https://my.living-apps.de/rest/apps/6a0c2b41f8c0e3c711f12e3f"
+        },
+        "positionen": {
+          "identifier": "positionen",
+          "label": "Positionen (Speisen)",
+          "type": "applookup",
+          "subtype": "select",
+          "fulltype": "applookup/select",
+          "description": "A reference to a LivingApp record from the target lookup app 'Speisen' with the id `6a0c2b3d9f199babf80832d4` (or `null`/`None`).\n\nThe field value will be a valid record URL in the form `https://my.living-apps.de/rest/apps/6a0c2b3d9f199babf80832d4/<record-id>` (or `null`/`None`).\n\nDisplayed as single-select field in HTML pages.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "lookup_app": "https://my.living-apps.de/rest/apps/6a0c2b3d9f199babf80832d4"
+        },
+        "bestellzeit": {
+          "identifier": "bestellzeit",
+          "label": "Bestellzeit",
+          "type": "date",
+          "subtype": "datetimeminute",
+          "fulltype": "date/datetimeminute",
+          "description": "A specific moment in time consisting of year, month, day, hour and minute (or `null`/`None`)\n\nThe field value will be a string in the format `<YYYY>-<MM>-<DD>T<HH>:<MM>` (or `null`/`None`).\n\nFor example: `2000-02-29T11:30`.\n\nFor `POST`/`PUT`/`PATCH` requests the REST API uses a liberal parsing approach so that strings like `2026`, `February 29, 2000 12:34 MEST`, `letztes Jahr` etc. will be accepted as value datetime values. However this runs the risk of parsing ambiguous values incorrectly. To ensure reliable parsing it is best to use the canonical format specified above.",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true
+        },
+        "trinkgeld": {
+          "identifier": "trinkgeld",
+          "label": "Trinkgeld (€)",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "precision": null
+        },
+        "gesamt": {
+          "identifier": "gesamt",
+          "label": "Gesamtbetrag (€)",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": null,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "precision": null
+        },
+        "bezahlt": {
+          "identifier": "bezahlt",
+          "label": "Bezahlt",
+          "type": "bool",
+          "subtype": null,
+          "fulltype": "bool",
+          "description": "A boolean value, i.e. `true` or `false` (or `null`/`None`).",
+          "required": null,
+          "in_list": false,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": false,
+          "in_fulltext_search": null,
+          "in_expert_search": true
+        }
+      }
+    }
+  },
+  "metadata": {
+    "apps_list": [
+      "Speisen",
+      "Tische",
+      "Bestellungen"
+    ]
+  }
+}

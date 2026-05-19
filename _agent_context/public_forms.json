@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "forms": [
+    {
+      "entity": "speisen",
+      "app_id": "6a0c2b3d9f199babf80832d4",
+      "path": "/rest/apps/6a0c2b3d9f199babf80832d4/records",
+      "allowed_fields": [
+        "name",
+        "preis",
+        "kategorie"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Speisen — Formular"
+    },
+    {
+      "entity": "tische",
+      "app_id": "6a0c2b41f8c0e3c711f12e3f",
+      "path": "/rest/apps/6a0c2b41f8c0e3c711f12e3f/records",
+      "allowed_fields": [
+        "tischnummer",
+        "bemerkung"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Tische — Formular"
+    },
+    {
+      "entity": "bestellungen",
+      "app_id": "6a0c2b42d7ff8d6335b2f8db",
+      "path": "/rest/apps/6a0c2b42d7ff8d6335b2f8db/records",
+      "allowed_fields": [
+        "bestellzeit",
+        "trinkgeld",
+        "gesamt",
+        "bezahlt"
+      ],
+      "pow": true,
+      "pow_difficulty": 50000,
+      "title": "Bestellungen — Formular"
+    }
+  ]
+}
